@@ -1,4 +1,4 @@
-import 'package:classhub/presentation/screens/home_page.dart';
+import 'package:classhub/presentation/screens/main_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           primary: Colors.deepPurple,
         ),
       ),
-      home: const HomePage(),
+      home: const MainPage(),
     );
   }
 }
