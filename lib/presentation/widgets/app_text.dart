@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppText extends StatelessWidget {
   final String? text;
   final double? fontSize;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
+  final String? fontFamily;
   @Deprecated("Use color")
   final Color? textColor;
   final Color? color;
@@ -20,6 +22,7 @@ class AppText extends StatelessWidget {
     this.color,
     this.overflow,
     this.maxLines,
+    this.fontFamily,
   });
 
   @override
@@ -29,11 +32,19 @@ class AppText extends StatelessWidget {
       text ?? '',
       maxLines: maxLines,
       overflow: overflow ?? TextOverflow.ellipsis,
-      style: TextStyle(
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-        color: textColor ?? color,
-      ),
+      style:
+          fontFamily == null
+              ? GoogleFonts.poppins(
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                color: textColor ?? color,
+              )
+              : TextStyle(
+                fontSize: fontSize,
+                fontWeight: fontWeight,
+                color: textColor ?? color,
+                fontFamily: fontFamily,
+              ),
     );
   }
 }
